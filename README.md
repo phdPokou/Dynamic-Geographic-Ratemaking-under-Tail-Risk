@@ -51,14 +51,19 @@ The distributional recursion is used for policy-conditional return-law evaluatio
 For a policy $\pi$, the computational analysis evaluates cumulative actuarial return over the finite horizon. Policy comparison combines expected cumulative return with the Tail Value at Risk of adverse cumulative return.
 
 Conceptually,
-$
-J_{\alpha,\lambda}^{\pi}
-=
-\mathbb{E}[G_0^\pi]
--
-\lambda\,\mathrm{TVaR}_{\alpha}(-G_0^\pi).
-$
 
+$$
+J_{\alpha,\lambda}^{\pi} = \mathbb{E}[G_0^\pi] - \lambda \, \mathrm{TVaR}_{\alpha}(-G_0^\pi)
+$$
+
+The baseline implementation uses:
+
+* tail probability level: $\alpha = 0.95$;
+* tail loading: $\lambda = 0.75$;
+* discount factor: $\gamma = 0.97$;
+* horizon: 5 years.
+
+The tail functional is applied to the distribution of the **complete cumulative return**. Local action scores are used for candidate-policy construction and are not recursively aggregated as policy-level values of $J_{\alpha,\lambda}$.
 The baseline implementation uses
 
 - tail probability level: $\alpha = 0.95$;
