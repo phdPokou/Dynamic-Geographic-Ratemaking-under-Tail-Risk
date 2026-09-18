@@ -297,7 +297,7 @@ A JSON file can override configuration parameters:
 ```bash
 python ime_tail_qr_pipeline_v13_final.py ^
     --run-all ^
-    --config config.json ^
+    --config ime_parameters.json ^
     --use-cuda
 ```
 
