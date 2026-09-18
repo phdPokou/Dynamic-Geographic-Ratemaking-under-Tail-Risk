@@ -51,14 +51,13 @@ The distributional recursion is used for policy-conditional return-law evaluatio
 For a policy $\pi$, the computational analysis evaluates cumulative actuarial return over the finite horizon. Policy comparison combines expected cumulative return with the Tail Value at Risk of adverse cumulative return.
 
 Conceptually,
-
-$$
+$
 J_{\alpha,\lambda}^{\pi}
 =
 \mathbb{E}[G_0^\pi]
 -
 \lambda\,\mathrm{TVaR}_{\alpha}(-G_0^\pi).
-$$
+$
 
 The baseline implementation uses
 
